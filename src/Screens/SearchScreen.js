@@ -1,41 +1,17 @@
-import {Text, View, TextInput} from 'react-native';
+import {View, TextInput} from 'react-native';
 import {HomeScreenStyles} from "./styles/HomeScreenStyles";
 import {useState} from "react";
 import {InputStyles} from "./styles/inputStyles";
 import {IconStyles} from "./styles/IconStyles";
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import {SearchViews} from "../components/SearchViews";
 
 export const SearchScreen = () => {
-  const {containerStyle, textStyle, inlineComponents} = HomeScreenStyles;
+  const {containerStyle} = HomeScreenStyles;
   const {searchIcon} = IconStyles;
   const {textInputStyle} = InputStyles;
   const [text, setText] = useState('');
 
-
-  const getViews = () => {
-    const colors = ["red", "green", "blue", "black", "brown", "black", "grey", "magenta"];
-    let i = 0;
-    return colors.map(color => {
-      i++;
-      return (<View key={i} style={{
-        backgroundColor: color,
-        height: (50 * i),
-        width: (75 * i),
-        marginVertical: 20,
-        marginHorizontal: 10,
-        display: "inline",
-        padding: "auto",
-        borderRadius: 10,
-      }
-      }><Text style={{
-        color: "white",
-        fontSize: (i * 10),
-        textAlign: "center",
-        margin: "auto",
-      }}>{text}</Text></View>)
-    })
-  }
   return (
     <View style={containerStyle}>
       <View style={{display: "block", width: "100%"}}>
@@ -46,7 +22,7 @@ export const SearchScreen = () => {
           onChangeText={newText => setText(newText)}
           defaultValue={text}
         />
-        {text.length > 0 && <View>{getViews()}</View>}
+        {text.length > 0 && <View><SearchViews text={text} /></View>}
       </View>
 
     </View>
