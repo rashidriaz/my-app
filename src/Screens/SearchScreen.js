@@ -11,7 +11,9 @@ export const SearchScreen = () => {
   const {searchIcon} = IconStyles;
   const {textInputStyle} = InputStyles;
   const [text, setText] = useState('');
-
+  const onEndEditing = ()=>{
+    setText("Submitted");
+  }
   return (
     <View style={containerStyle}>
       <View style={{display: "block", width: "100%"}}>
@@ -19,12 +21,13 @@ export const SearchScreen = () => {
         <TextInput
           style={textInputStyle}
           placeholder="Search"
-          onChangeText={newText => setText(newText)}
+          onChangeText={setText}
+          onSubmitEditing = {onEndEditing}
           defaultValue={text}
         />
-        {text.length > 0 && <View><SearchViews text={text} /></View>}
       </View>
 
+      {text.length > 0 && <View><SearchViews text={text} /></View>}
     </View>
   );
 

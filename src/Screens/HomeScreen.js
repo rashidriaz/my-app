@@ -28,6 +28,9 @@ export const HomeScreen = ({navigation}) => {
       <Pressable style={buttonStyle} onPress={() => {
         navigation.navigate('color')
       }}><Text style={buttonTextStyle}>Random Color Generator</Text></Pressable>
+      <Pressable style={buttonStyle} onPress={() => {
+        navigation.navigate('calculator')
+      }}><Text style={buttonTextStyle}>Calculator</Text></Pressable>
     </View>
   );
 }

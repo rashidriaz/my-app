@@ -4,7 +4,7 @@ import {buttonColor} from "../../utils/constants";
 export const HomeScreenStyles = StyleSheet.create({
   containerStyle: {
     marginVertical: "auto",
-    marginHorizontal: 200,
+    marginHorizontal: "auto",
   },
   textStyle:
     {
@@ -24,8 +24,9 @@ export const HomeScreenStyles = StyleSheet.create({
     borderStyle: "solid",
     borderRadius: 10,
     paddingVertical: 10,
+    paddingHorizontal: 20,
     marginVertical: 5,
-    justifyContent: "center"
+    justifyContent: "center",
   },
   buttonTextStyle: {
     fontSize: 20,
